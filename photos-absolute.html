@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<h2></h2>
+		<title>Simple Photo Gallery Using HTML and CSS</title>
+
+		<style type="text/css" media="screen">
+			#gallery{
+				/* Set the background to black */
+				background-color: black;
+				/* Set the text color to white */
+				color:white;
+				/* Put everything in the center */
+				text-align: center;
+				/* Force the page to be atleast 100% tall */
+				min-height: 100vh;
+				/* I need overflow hidden so my floated children will be forced to tell me how tall they are. Float will also work, but I don't want to use float */
+				overflow: hidden;
+			}
+			
+			img {
+				/* I do nothing */
+				max-width: 100%;
+			}
+			
+			#left{
+				/* Make me 75% so I don't take up the whole screen */
+				width: 75%
+				/* Set my margin to auto so the margin leftover from my width is divided evenly on all sides */
+				margin:auto;
+				
+
+			}
+
+			#right {
+				
+			}
+			.thumbnail {
+				width:20%;
+				box-sizing: border-box;
+				position:absolute;
+
+			}
+
+			.one {
+				border: 5px red solid;
+				top: 0px;
+				left: 0px;
+			}
+
+			.two {
+				top: 0px;
+				left: 20%;
+			}
+			.three {
+				top: 0px;
+				left: 40%;
+			}
+			.four {
+				top: 0px;
+				left: 60%;
+			}
+			.five {
+				top: 0px;
+				left: 80%;
+			}
+		</style>
+</head>
+<body>
+	<!-- Create a master wrapper for the whole gallery to live inside of -->
+	<div id="gallery">
+	<!-- Make the top layer div for the title -->
+		<div id="top">
+		<!-- Put our title inside an H2 Tag -->
+			<h2>Image Gallery in HTML and CSS</h2>
+		</div>
+		<!-- Make the left hand  div to put our thumbnails in -->
+		<div id="left">
+			<div class="thumbnail one">
+			<!-- Add a div to hold the image. Divs are nice because they are blocks. Images are not nice because they are inline. 
+		Add the same class (thumbnail) to each div, so we can target all at the same time
+		Add a unique class to each div so we can target them individiually. -->
+				<img src="images/image1.jpg" onclick="largePic.src='images/image1.jpg'">
+			</div>
+			<div class="thumbnail two">
+				<img src="images/image2.jpg" onmouseover="largePic.src='images/image2.jpg'">
+			</div>
+			<div class="thumbnail three">
+				<img src="images/image3.jpg" onmouseover="largePic.src='images/image3.jpg'">
+			</div>
+			<div class="thumbnail four">
+				<img src="images/image4.jpg" onmouseover="largePic.src='images/image4.jpg'">
+			</div>
+			<div class="thumbnail five">
+				<img src="images/image5.jpg" onmouseover="largePic.src='images/image5.jpg'">
+			</div>
+		</div>
+		<!-- Make the preview on the right side to populate our thumbnail -->
+		<div id="right">
+			<!-- Make the large preview image -->
+			<img src="images/image1.jpg" name="largePic">
+	</div>
+</body>
+</html>

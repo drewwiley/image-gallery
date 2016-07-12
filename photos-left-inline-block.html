@@ -14,24 +14,25 @@
 				text-align: center;
 				/* Force the page to be atleast 100% tall */
 				min-height: 100vh;
-				/* I need overflow hidden so my floated children will be forced to tell me how tall they are. Float will also work, but I don't want to use float */
-				overflow: hidden;
 			}
 			
 			img {
-				/* I do nothing */
+				/* I make the images no bigger than their parents. */
 				max-width: 100%;
+			}
+
+			#left, #right {
+				display: inline-block;
 			}
 			
 			#left{
+				/* I make the div 20% the width of my parent */
 				width: 20%;
-				float: left;
 
 			}
 
 			#right {
 				width: 60%;
-				float: left;
 			}
 		</style>
 </head>
